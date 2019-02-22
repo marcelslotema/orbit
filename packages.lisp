@@ -1,18 +1,17 @@
-(defpackage util
+(defpackage math
   (:use :common-lisp)
-  (:export :defoperator))
-
-(defpackage physics-engine
-  (:use :common-lisp
-        :util)
   (:export :add
            :diff
            :mult
-           :vec-length
-           :unit
            :vec
            :vec-p
-           :body
+           :vec-length
+           :unit))
+
+(defpackage physics-engine
+  (:use :common-lisp
+        :math)
+  (:export :body
            :body-p
            :gravity
            :force-acceleration
@@ -20,7 +19,8 @@
 
 (defpackage solarium
   (:use :common-lisp
-        :physics-engine)
+        :physics-engine
+        :math)
   (:export :gaia
            :luna
            :iss))
