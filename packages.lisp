@@ -10,7 +10,7 @@
            :vec-length
            :unit))
 
-(defpackage physics-engine
+(defpackage physics
   (:use :common-lisp
         :math)
   (:export :body
@@ -21,7 +21,7 @@
 
 (defpackage solarium
   (:use :common-lisp
-        :physics-engine
+        :physics
         :math)
   (:export :gaia
            :luna

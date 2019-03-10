@@ -1,4 +1,4 @@
-(in-package :physics-engine)
+(in-package :physics)
 
 ;;; Physical constants
 
