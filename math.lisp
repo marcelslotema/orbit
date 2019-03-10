@@ -35,3 +35,12 @@
 (defun mult (&rest args)
   "Multiply stuff"
   (reduce #'binary-mult args))
+
+(defgeneric binary-div (lhs rhs)
+  (:documentation "Divide two things from each other")
+  (:method (lhs rhs)
+    (/ lhs rhs)))
+
+(defun div (&rest args)
+  "Divide stuff"
+  (reduce #'binary-div args))

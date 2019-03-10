@@ -3,6 +3,7 @@
   (:export :add
            :diff
            :mult
+           :div
            :float=
            :vec
            :vec-p
@@ -33,3 +34,8 @@
   (:export :gaia
            :luna
            :iss))
+
+(defpackage display
+  (:use :common-lisp
+        :physics
+        :math))
