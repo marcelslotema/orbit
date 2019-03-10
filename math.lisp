@@ -1,5 +1,12 @@
 (in-package :math)
 
+;;; Custom comparison functions
+
+(defun float= (lhs rhs &optional &key (epsilon 1e-6))
+  "Compare two floating point numbers"
+  (< (abs (- lhs rhs))
+     epsilon))
+
 ;;; Custom, overloadable arithmetic operators
 
 (defgeneric binary-add (lhs rhs)

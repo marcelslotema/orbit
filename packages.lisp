@@ -3,8 +3,10 @@
   (:export :add
            :diff
            :mult
+           :float=
            :vec
            :vec-p
+           :vec=
            :vec-length
            :unit))
 

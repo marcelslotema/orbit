@@ -25,6 +25,12 @@
   "Check if something is a vector"
   (typep instance 'vec))
 
+(defun vec= (lhs rhs &optional &key (epsilon 1e-6))
+  "Compare two vectors with each other"
+  (and (float= (x lhs) (x rhs) :epsilon epsilon)
+       (float= (y lhs) (y rhs) :epsilon epsilon)
+       (float= (z lhs) (z rhs) :epsilon epsilon)))
+
 (defmethod binary-add ((lhs vec) (rhs vec))
   (vec :x (add (x lhs) (x rhs))
        :y (add (y lhs) (y rhs))

@@ -53,9 +53,11 @@
   "Determine the gravitational force excerted by object-2 on object -1"
   (let ((r (diff (location body-2)
                  (location body-1))))
-    (mult (unit r)
-          (/ (* G (mass body-1) (mass body-2))
-             (expt (vec-length r) 2)))))
+    (if (vec= r (vec))
+      (vec)
+      (mult (unit r)
+            (/ (* G (mass body-1) (mass body-2))
+               (expt (vec-length r) 2))))))
 
 (defun force-acceleration (mass force)
   "Deterimnes the acceleration caused by a force applied on a mass.
