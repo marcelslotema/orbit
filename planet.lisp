@@ -16,3 +16,12 @@
                  :velocity (if velocity
                              velocity
                              (vec))))
+
+(defmethod update-body (time-delta universe (body planet))
+  "Update information on planets"
+  (let ((updated (call-next-method)))
+    (planet :id (id updated)
+            :mass (mass updated)
+            :radius (radius body)
+            :velocity (velocity updated)
+            :location (location updated))))

@@ -1,3 +1,7 @@
+(defpackage util
+  (:use :common-lisp)
+  (:export :partial))
+
 (defpackage math
   (:use :common-lisp)
   (:export :add
@@ -16,7 +20,8 @@
 
 (defpackage physics
   (:use :common-lisp
-        :math)
+        :math
+        :util)
   (:export :body
            :body-p
            :location
@@ -25,7 +30,8 @@
            :radius
            :gravity
            :force-acceleration
-           :update-location))
+           :update-location)
+  (:shadow :step))
 
 (defpackage solarium
   (:use :common-lisp
