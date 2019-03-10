@@ -20,6 +20,8 @@
            :body-p
            :location
            :velocity
+           :planet
+           :radius
            :gravity
            :force-acceleration
            :update-location))

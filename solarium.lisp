@@ -1,15 +1,20 @@
 (in-package :solarium)
 
-; Geocentric objects
+;; Geocentric objects
+;; https://nssdc.gsfc.nasa.gov/planetary/factsheet/index.html
 
 (defparameter gaia
-  (body :id "♁"
-        :mass 5.97237d24)) ; [kg]
+  (planet :id "♁"
+          :mass 5.97d24 ; [kg]
+          :radius (/ 12756d3 2)
+          :location (vec :y -4.670d6))) ; [m]
 
 (defparameter luna
-  (body :id "☾"
-        :mass 7.342d22 ; [kg]
-        :location (vec :y 0.3633d9))) ; [m]
+  (planet :id "☾"
+          :mass 0.073d24 ; [kg]
+          :radius (/ 3475d3 2) ; [m]
+          :location (vec :y (- 0.3626d9 4.670d6)) ; perigee [m]
+          :velocity (vec :x 1.082d3))) ; velocity at perigee [m/s]
 
 (defparameter iss
   (body :id "ISS"
