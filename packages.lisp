@@ -8,6 +8,9 @@
            :vec-p
            :vec=
            :vec-length
+           :x
+           :y
+           :z
            :unit))
 
 (defpackage physics
@@ -15,6 +18,8 @@
         :math)
   (:export :body
            :body-p
+           :location
+           :velocity
            :gravity
            :force-acceleration
            :update-location))
