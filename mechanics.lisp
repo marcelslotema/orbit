@@ -67,8 +67,8 @@
 
 (defun update-location (duration acceleration velocity location)
   "Deterimen a new location and velocity"
-  (values (add location ; p = p0 + v0 . t + 0.5 . a . t^2
+  (values (add velocity ; v = v0 + a . t
+               (mult acceleration duration))
+          (add location ; p = p0 + v0 . t + 0.5 . a . t^2
                (mult velocity duration)
-               (mult acceleration 0.5d0 duration duration))
-          (add velocity ; v = v0 + a . t
-               (mult acceleration duration))))
+               (mult acceleration 0.5d0 duration duration))))
